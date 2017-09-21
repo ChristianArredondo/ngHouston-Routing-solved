@@ -1,0 +1,18 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  background: #DADADA;
+}
+
+.card {
+  width: 500px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+p {
+  margin: 8px 0;
+}

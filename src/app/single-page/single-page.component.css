@@ -1,0 +1,37 @@
+:host {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.combined {
+  height: 100%;
+}
+
+.select .example-full-width {
+  width: 20%;
+}
+
+.view {
+  background: #DADADA;
+}
+.card {
+  width: 500px;
+}
+.view p {
+  margin: 8px 0;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.edit .example-full-width {
+  width: 100%;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}

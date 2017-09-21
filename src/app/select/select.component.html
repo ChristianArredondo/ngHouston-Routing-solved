@@ -1,0 +1,12 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxFlex>
+  <h1>Choose a Recipe</h1>
+  <md-select
+  placeholder="Recipe" 
+  color="accent"
+  [formControl]="recipeControl"
+  class="example-full-width">
+  <md-option *ngFor="let recipe of recipes" [value]="recipe.id">
+    {{ recipe.title }}
+  </md-option>
+</md-select>
+</div>

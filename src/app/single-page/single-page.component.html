@@ -1,0 +1,39 @@
+<md-toolbar color="primary">
+  <span>Hello ngHouston!</span>
+  <span class="example-spacer"></span>
+  <span><img src="favicon.ico" alt=""></span>
+</md-toolbar>
+<div fxLayout="row" class="combined">
+  <div fxLayout="column" fxLayoutAlign="center center" fxFlex="50">
+    <h1>Choose a Recipe</h1>
+    <md-select
+      placeholder="Recipe" 
+      color="accent"
+      [formControl]="recipeControl"
+      style="width: 35%;">
+      <md-option *ngFor="let recipe of recipes" [value]="recipe.id">
+        {{ recipe.title }}
+      </md-option>
+    </md-select>
+  </div>
+  <div fxLayoutAlign="center center" fxFlex="50" fxLayout="column" style="background:#ededed;">
+      <p *ngIf="!recipe">Waiting for recipe...</p>
+      <md-card class="card" *ngIf="recipe">
+        <md-card-header>
+          <md-card-title>{{ recipe.title }}</md-card-title>
+          <md-card-subtitle>{{ recipe.description}}</md-card-subtitle>
+        </md-card-header>
+        <img md-card-image [src]="recipe.imgUrl" alt="Spaghetti">
+        <md-card-content>
+          <p>Ingredients</p>
+          <div fxLayout="row" *ngFor="let ingredient of recipe.ingredients">
+            <p fxFlex="grow" fxFlex="20">{{ ingredient.name }}</p>
+            <p fxFlex="noshrink">{{ ingredient.amount }}</p>
+          </div>
+        </md-card-content>
+        <md-card-actions>
+          <button md-button color="primary" (click)="onClear()">CLEAR</button>
+        </md-card-actions>
+      </md-card>
+    </div>
+</div>

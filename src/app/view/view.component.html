@@ -1,0 +1,20 @@
+<div fxLayoutAlign="center center" fxFlex>
+  <md-card class="card">
+    <md-card-header>
+      <md-card-title>{{ recipe.title }}</md-card-title>
+      <md-card-subtitle>{{ recipe.description}}</md-card-subtitle>
+    </md-card-header>
+    <img md-card-image [src]="recipe.imgUrl" alt="Spaghetti">
+    <md-card-content>
+      <p>Ingredients</p>
+      <div fxLayout="row" *ngFor="let ingredient of recipe.ingredients">
+        <p fxFlex="grow" fxFlex="20">{{ ingredient.name }}</p>
+        <p fxFlex="noshrink">{{ ingredient.amount }}</p>
+      </div>
+    </md-card-content>
+    <md-card-actions>
+      <button md-button color="primary"[routerLink]="['']">BACK</button>
+      <button md-button color="primary" (click)="onNext()">NEXT</button>
+    </md-card-actions>
+  </md-card>
+</div>
