@@ -13,23 +13,23 @@ export class ViewComponent {
   id: number;
 
   constructor(
-    private recipeService: RecipeService,
-    private route: ActivatedRoute,
-    private router: Router
+    private _recipeService: RecipeService,
+    private _route: ActivatedRoute,
+    private _router: Router
   ) {
     // this.id = 0;
-    this.recipes = this.recipeService.getRecipes();
-    this.route.params
+    this.recipes = this._recipeService.getRecipes();
+    this._route.params
     .subscribe((params: Params) => {
       this.id = +params.id;
-      this.recipe = this.recipeService.getRecipes()[params.id];
+      this.recipe = this._recipeService.getRecipes()[params.id];
     });
     console.log(this.recipe);
   }
 
   onNext () {
     this.id === this.recipes.length - 1 ? this.id = 0 : this.id ++;
-    this.router.navigate(['recipes', this.id]);
+    this._router.navigate(['recipes', this.id]);
   }
 
 }

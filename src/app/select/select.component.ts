@@ -1,5 +1,5 @@
-import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Recipe, RecipeService } from '../recipe.service';
 import { FormControl } from '@angular/forms';
 
@@ -23,7 +23,6 @@ export class SelectComponent implements OnInit {
     this.recipeControl.valueChanges
       .subscribe(id => {
         this.id = id;
-        // console.log(id);
         this._router.navigate(['recipes', id]);
       });
   }
